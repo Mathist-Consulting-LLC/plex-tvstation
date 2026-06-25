@@ -2,6 +2,13 @@
 set -u
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHON_BIN="${PYTHON:-}"
+if [[ -z "$PYTHON_BIN" && -x "$SCRIPT_DIR/.venv/bin/python3" ]]; then
+	PYTHON_BIN="$SCRIPT_DIR/.venv/bin/python3"
+fi
+if [[ -z "$PYTHON_BIN" ]]; then
+	PYTHON_BIN="python3"
+fi
 PRINT_COMMANDS=false
 PASSTHROUGH_ARGS=()
 
@@ -49,7 +56,7 @@ run_playlist() {
 		read -r -a filter_args <<< "$filter_args_text"
 	fi
 
-	local command=(python3 "$SCRIPT_DIR/src/main.py" tvstation "${filter_args[@]}" "${PASSTHROUGH_ARGS[@]}")
+	local command=("$PYTHON_BIN" "$SCRIPT_DIR/src/main.py" tvstation "${filter_args[@]}" "${PASSTHROUGH_ARGS[@]}")
 
 	if [[ "$PRINT_COMMANDS" == true ]]; then
 		quote_command "${command[@]}"
