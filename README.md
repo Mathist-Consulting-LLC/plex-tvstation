@@ -68,3 +68,11 @@ The application uses several additional files for configuration and managing med
 
 Ensure these files are correctly configured and placed in the appropriate directory for the application to function as expected.
 
+
+## Node.js rewrite status
+
+Issue #1 tracks the Node.js rewrite. The current Node slice provides tested config normalization, pure playlist planning, and a dry-run CLI that does not call or mutate Plex. See docs/node-rewrite-migration.md and config/example.json.
+
+Run tests with: npm test
+
+Run a dry-run with fixture library data: node src/node/cli.js dry-run --config config/example.json --library path/to/library-fixture.json

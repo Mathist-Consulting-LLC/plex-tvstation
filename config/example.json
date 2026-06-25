@@ -1,0 +1,54 @@
+{
+  "defaults": {
+    "maxItems": 50,
+    "tvShowLimit": 5,
+    "rewatchDelay": {
+      "movies": "180 days",
+      "tv": "90 days"
+    }
+  },
+  "genreMappings": {
+    "scifi": "sci-fi",
+    "science fiction": "sci-fi",
+    "romantic comedy": "rom-com"
+  },
+  "playlists": [
+    {
+      "name": "TV Station",
+      "type": "all"
+    },
+    {
+      "name": "Sci-Fi TV Station",
+      "genre": "sci-fi"
+    },
+    {
+      "name": "Star Trek TV Station",
+      "franchise": "star-trek"
+    },
+    {
+      "name": "Comfort Shows",
+      "comfort": true,
+      "include": {
+        "shows": ["bobs-burgers", "raising-hope"],
+        "movies": ["silent-running"]
+      }
+    }
+  ],
+  "excludedSlugs": ["example-series-1"],
+  "franchises": ["star-wars", "star-trek", "marvel", "dc"],
+  "restrictedPlayMonths": {
+    "december": ["christmas", "new-year"]
+  },
+  "metadata": [
+    {
+      "slug": "silent-running",
+      "year": 1972,
+      "rewatchDelay": "1 year"
+    },
+    {
+      "slug": "bobs-burgers",
+      "rewatchDelay": "30 days",
+      "alwaysInclude": true
+    }
+  ]
+}

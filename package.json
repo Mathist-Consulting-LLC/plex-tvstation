@@ -1,0 +1,13 @@
+{
+  "name": "plex-tvstation",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Build classic TV channel style Plex playlists.",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
