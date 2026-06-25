@@ -1,38 +1,83 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -u
 
-# $1 is the log-only flag (-l)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PRINT_COMMANDS=false
+PASSTHROUGH_ARGS=()
 
-# All media tv station
-python3 src/main.py tvstation $1
+for arg in "$@"; do
+	case "$arg" in
+		--print-commands)
+			PRINT_COMMANDS=true
+			;;
+		*)
+			PASSTHROUGH_ARGS+=("$arg")
+			;;
+	esac
+done
 
-# Comedy tv station
-python3 src/main.py tvstation -g comedy $1
+PLAYLISTS=(
+	"All media|"
+	"Comedy|-g comedy"
+	"Action|-g action"
+	"Animation|-g animation"
+	"Sci-Fi|-g sci-fi"
+	"Fantasy|-g fantasy"
+	"Star Wars|-f star-wars"
+	"Star Trek|-f star-trek"
+	"Marvel|-f marvel"
+	"DC|-f dc"
+	"Comfort Shows|-g comfort"
+)
 
-# Action tv station
-python3 src/main.py tvstation -g action $1
+quote_command() {
+	printf '%q' "$1"
+	shift
+	for arg in "$@"; do
+		printf ' %q' "$arg"
+	done
+	printf '\n'
+}
 
-# Animation tv station
-python3 src/main.py tvstation -g animation $1
+run_playlist() {
+	local name="$1"
+	local filter_args_text="$2"
+	local filter_args=()
+	local status=0
 
-# Sci-Fi tv station
-python3 src/main.py tvstation -g sci-fi $1
+	if [[ -n "$filter_args_text" ]]; then
+		read -r -a filter_args <<< "$filter_args_text"
+	fi
 
-# Fantasy tv station
-python3 src/main.py tvstation -g fantasy $1
+	local command=(python3 "$SCRIPT_DIR/src/main.py" tvstation "${filter_args[@]}" "${PASSTHROUGH_ARGS[@]}")
 
-# Franchise tv stations
+	if [[ "$PRINT_COMMANDS" == true ]]; then
+		quote_command "${command[@]}"
+		return 0
+	fi
 
-# Star Wars tv station
-python3 src/main.py tvstation -f star-wars $1
+	echo "Updating ${name} playlist..."
+	"${command[@]}"
+	status=$?
 
-# Star Trek tv station
-python3 src/main.py tvstation -f star-trek $1
+	if [[ $status -ne 0 ]]; then
+		echo "ERROR: ${name} playlist update failed with exit code ${status}" >&2
+	fi
 
-# Marvel tv station
-python3 src/main.py tvstation -f marvel $1
+	return "$status"
+}
 
-# DC tv station
-python3 src/main.py tvstation -f dc $1
+failures=0
+for playlist in "${PLAYLISTS[@]}"; do
+	name="${playlist%%|*}"
+	filter_args="${playlist#*|}"
 
-# Comfort Shows
-python3 src/main.py tvstation -g comfort $1
+	if ! run_playlist "$name" "$filter_args"; then
+		failures=$((failures + 1))
+	fi
+done
+
+if [[ $failures -gt 0 ]]; then
+	echo "Completed with ${failures} playlist update failure(s)." >&2
+	exit 1
+fi
