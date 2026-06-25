@@ -13,7 +13,7 @@ test('tv.sh prints commands for every playlist and forwards all args', async () 
   const lines = stdout.trim().split('\n');
 
   assert.equal(lines.length, 11);
-  assert.match(lines[0], /python3 .*src\/main\.py tvstation -l --force$/);
+  assert.match(lines[0], /\.venv\/bin\/python3 .*src\/main\.py tvstation -l --force$/);
   assert.match(lines[1], /python3 .*src\/main\.py tvstation -g comedy -l --force$/);
   assert.match(lines[2], /python3 .*src\/main\.py tvstation -g action -l --force$/);
   assert.match(lines[3], /python3 .*src\/main\.py tvstation -g animation -l --force$/);
