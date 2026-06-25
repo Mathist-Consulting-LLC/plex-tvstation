@@ -55,7 +55,9 @@ The application uses several additional files for configuration and managing med
     - **excludedSlugs**: A list of slugs (unique identifiers for media content) that should be excluded from processing.
     - **movieSeriesSlugs**: A list of slugs representing movie series that are grouped together.
     - **restrictedPlayMonths**: Specifies certain months during which specific themes or categories of media are restricted.
-    - **metadata**: An array of objects, each containing metadata for specific TV shows.
+    - **comfortShows**: A list of show slugs included in the Comfort Shows playlist.
+    - **comfortMovies**: A list of movie slugs included in the Comfort Shows playlist. These movies are treated as episodes in the synthetic Movies series.
+    - **metadata**: An array of objects, each containing metadata for specific TV shows and movies.
       - **slug**: The unique identifier for the TV show.
       - **rewatchDelay**: The specific rewatch delay for the show, overriding the default if necessary.
       - **alwaysInclude**: A boolean indicating whether the show should always be included in processing, regardless of other settings.

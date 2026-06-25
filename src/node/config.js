@@ -29,6 +29,28 @@ function normalizePlaylist(playlist = {}, defaults) {
   };
 }
 
+function getPlaylistDefinitions(rawConfig) {
+  const playlists = [...(rawConfig.playlists || [])];
+  const hasLegacyComfortLists = Boolean(
+    (rawConfig.comfortShows && rawConfig.comfortShows.length) ||
+    (rawConfig.comfortMovies && rawConfig.comfortMovies.length)
+  );
+  const hasComfortPlaylist = playlists.some((playlist) => playlist.comfort);
+
+  if (hasLegacyComfortLists && !hasComfortPlaylist) {
+    playlists.push({
+      name: 'Comfort Shows',
+      comfort: true,
+      include: {
+        shows: rawConfig.comfortShows || [],
+        movies: rawConfig.comfortMovies || []
+      }
+    });
+  }
+
+  return playlists;
+}
+
 function normalizeConfig(rawConfig = {}) {
   const defaults = {
     ...DEFAULTS,
@@ -46,7 +68,7 @@ function normalizeConfig(rawConfig = {}) {
 
   return {
     defaults,
-    playlists: (rawConfig.playlists || []).map((playlist) => normalizePlaylist(playlist, defaults)),
+    playlists: getPlaylistDefinitions(rawConfig).map((playlist) => normalizePlaylist(playlist, defaults)),
     excludedSlugs: normalizeSlugList(rawConfig.excludedSlugs),
     franchises: normalizeSlugList(rawConfig.franchises),
     restrictedPlayMonths: rawConfig.restrictedPlayMonths || {},

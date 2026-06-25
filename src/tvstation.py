@@ -118,6 +118,35 @@ def parse_duration_to_days(duration):
 		
 	return 365  # Default to 1 year if something goes wrong
 
+def normalize_config_slugs(entries):
+	"""
+	Normalize config entries into slug identifiers.
+	Entries may be strings, or objects with a slug or title field.
+	"""
+	slugs = []
+	for entry in entries or []:
+		if isinstance(entry, str):
+			slugs.append(create_slug(entry))
+		elif isinstance(entry, dict):
+			slug_val = entry.get('slug')
+			if slug_val:
+				slugs.append(create_slug(str(slug_val)))
+				continue
+			title_val = entry.get('title')
+			if title_val:
+				slugs.append(create_slug(str(title_val)))
+	return dedupe_preserving_order(slugs)
+
+
+def dedupe_preserving_order(values):
+	seen = set()
+	ordered = []
+	for value in values:
+		if value and value not in seen:
+			seen.add(value)
+			ordered.append(value)
+	return ordered
+
 def set_plex_globals(args, local_config_file, log_dir):
 	"""
 	Set the PLEX_GLOBALS dictionary with values from the local_config.json file.
@@ -175,28 +204,9 @@ def set_plex_globals(args, local_config_file, log_dir):
 	# Log file name
 	log_file_name = f'{playlist_name.replace(" ", "-").lower()}.md'
 
-	# Build comfort slugs list from config (strings or objects with slug/title)
-	comfort_entries = LOCAL_CONFIG.get('comfortShows', [])
-	comfort_slugs = []
-	for entry in comfort_entries:
-		if isinstance(entry, str):
-			comfort_slugs.append(entry.strip().lower())
-		elif isinstance(entry, dict):
-			slug_val = entry.get('slug')
-			if slug_val:
-				comfort_slugs.append(str(slug_val).strip().lower())
-				continue
-			title_val = entry.get('title')
-			if title_val:
-				comfort_slugs.append(create_slug(title_val))
-
-	# Deduplicate while preserving order
-	seen_cs = set()
-	comfort_slugs_ordered = []
-	for s in comfort_slugs:
-		if s and s not in seen_cs:
-			seen_cs.add(s)
-			comfort_slugs_ordered.append(s)
+	comfort_show_slugs = normalize_config_slugs(LOCAL_CONFIG.get('comfortShows', []))
+	comfort_movie_slugs = normalize_config_slugs(LOCAL_CONFIG.get('comfortMovies', []))
+	comfort_slugs_ordered = dedupe_preserving_order(comfort_show_slugs + comfort_movie_slugs)
 
 	# Initialize PLEX_GLOBALS dictionary
 	PLEX_GLOBALS = {
@@ -233,6 +243,8 @@ def set_plex_globals(args, local_config_file, log_dir):
 		'series_episodes': {},
 
 		'playlist_episode_keys': [],
+		'comfort_show_slugs': comfort_show_slugs,
+		'comfort_movie_slugs': comfort_movie_slugs,
 		'comfort_slugs': comfort_slugs_ordered
 	}
 
@@ -607,7 +619,7 @@ def build_series_episodes(ssn):
 				continue
 		elif PLEX_GLOBALS['genre'] == 'comfort':
 			# Only include series explicitly listed in comfortShows
-			if series_slug not in PLEX_GLOBALS.get('comfort_slugs', []):
+			if series_slug not in PLEX_GLOBALS.get('comfort_show_slugs', PLEX_GLOBALS.get('comfort_slugs', [])):
 				continue
 		elif PLEX_GLOBALS['genre'] and PLEX_GLOBALS['genre'] not in series_genres:
 			continue
@@ -837,8 +849,8 @@ def build_movie_list(ssn):
 			if franchise != PLEX_GLOBALS['franchise']:
 				continue
 		elif PLEX_GLOBALS['genre'] == 'comfort':
-			# Only include movies explicitly listed in comfortShows
-			if movie_slug not in PLEX_GLOBALS.get('comfort_slugs', []):
+			# Only include movies explicitly listed in comfortMovies
+			if movie_slug not in PLEX_GLOBALS.get('comfort_movie_slugs', []):
 				continue
 		elif PLEX_GLOBALS['genre'] and PLEX_GLOBALS['genre'] not in movie_genres:
 			continue
@@ -1238,8 +1250,7 @@ def my_tv_station(ssn, args):
 	
 	# Build the playlist
 	build_series_episodes(ssn)
-	# In comfort mode, skip movies entirely
-	if PLEX_GLOBALS.get('genre') != 'comfort':
+	if PLEX_GLOBALS.get('genre') != 'comfort' or PLEX_GLOBALS.get('comfort_movie_slugs'):
 		build_movie_list(ssn)
 	build_playlist_episode_keys()
 
