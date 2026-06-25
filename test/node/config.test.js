@@ -37,6 +37,19 @@ test('normalizeConfig keeps comfort show and movie include lists separate', () =
   assert.deepEqual(config.playlists[0].include.movies, ['silent-running']);
 });
 
+
+test('normalizeConfig creates a comfort playlist from legacy comfort lists', () => {
+  const config = normalizeConfig({
+    comfortShows: ['Bob\'s Burgers'],
+    comfortMovies: ['Silent Running']
+  });
+
+  assert.equal(config.playlists[0].name, 'Comfort Shows');
+  assert.equal(config.playlists[0].comfort, true);
+  assert.deepEqual(config.playlists[0].include.shows, ['bobs-burgers']);
+  assert.deepEqual(config.playlists[0].include.movies, ['silent-running']);
+});
+
 test('normalizeConfig exposes metadata by slug', () => {
   const config = normalizeConfig({
     metadata: [
