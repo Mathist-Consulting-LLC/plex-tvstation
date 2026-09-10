@@ -3,9 +3,10 @@ import re
 import socket
 import requests
 import sys
+from pathlib import Path
 
 # Load genre mappings from file
-GENRE_MAPPINGS_PATH = '/home/rob/repos/plex-tvstation/src/genre_mappings.json'
+GENRE_MAPPINGS_PATH = Path(__file__).with_name('genre_mappings.json')
 try:
 	with open(GENRE_MAPPINGS_PATH, 'r') as f:
 		GENRE_MAPPINGS = json.load(f)
