@@ -1121,15 +1121,15 @@ def replace_playlist_items(ssn):
 	machine_id = get_machine_id(ssn)
 	playlist_name, playlist_key, playlist_episode_keys, _ = get_playlist_globals()
 
+	if len(playlist_episode_keys) == 0:
+		log_message("No episodes to add to playlist -- existing playlist preserved")
+		return
+
 	params = {'type': 'video', 'title': playlist_name, 'smart': '0', 'uri': f'server://{machine_id}/com.plexapp.plugins.library/library/metadata/{",".join(playlist_episode_keys)}'}
 
 	if playlist_key is not None:
-		# Delete existing playlist
+		# Delete the existing playlist only after a non-empty replacement is ready.
 		response = ssn.delete(f'{base_url}/playlists/{playlist_key}')
-
-	if len(playlist_episode_keys) == 0:
-		log_message("No episodes to add to playlist -- playlist deleted")
-		return
 
 	# Create new playlist
 	response = ssn.post(f'{base_url}/playlists', params=params)
