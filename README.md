@@ -78,3 +78,35 @@ Issue #1 tracks the Node.js rewrite. The current Node slice provides tested conf
 Run tests with: npm test
 
 Run a dry-run with fixture library data: node src/node/cli.js dry-run --config config/example.json --library path/to/library-fixture.json
+
+## Comfort web manager
+
+`src/comfort_web.py` starts a small web application for managing `comfortShows` and `comfortMovies` in `local_config.json`.
+
+Run it from this checkout without touching live services:
+
+```bash
+python3 src/comfort_web.py \
+  --bind 127.0.0.1 \
+  --port 8088 \
+  --config-path ./local_config.json \
+  --env-path ./.env
+```
+
+The app has separate pages:
+
+- `http://127.0.0.1:8088/shows`
+- `http://127.0.0.1:8088/movies`
+
+Configuration can also come from environment variables:
+
+- `COMFORT_WEB_BIND` defaults to `127.0.0.1`.
+- `COMFORT_WEB_PORT` defaults to `8088`.
+- `COMFORT_WEB_CONFIG` defaults to `local_config.json`.
+- `COMFORT_WEB_ENV` defaults to `.env`.
+
+Plex connection settings are read from the env file or environment using the existing names: `plex_ip`, `plex_port`, `plex_base_url`, and `plex_api_token`.
+
+The default bind address is local-only. To reach the app from the Windows machine on the LAN, bind to the pop-os LAN or Tailscale address, or to `0.0.0.0` only on a trusted private network, then browse to `http://<pop-os-private-ip>:8088/shows` from Windows. Do not expose this port through a public router, reverse proxy, or firewall rule.
+
+A user-level systemd template is available at `docs/comfort-web-systemd.service`. Review the paths and copy it to `~/.config/systemd/user/` if you want systemd to manage the app later; this repository does not install or start the service automatically.
