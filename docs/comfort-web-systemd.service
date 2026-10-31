@@ -1,0 +1,17 @@
+[Unit]
+Description=Plex TV Station comfort web manager
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/repos/mathist/plex-tvstation
+Environment=COMFORT_WEB_BIND=127.0.0.1
+Environment=COMFORT_WEB_PORT=8088
+Environment=COMFORT_WEB_CONFIG=%h/repos/mathist/plex-tvstation/local_config.json
+Environment=COMFORT_WEB_ENV=%h/repos/mathist/plex-tvstation/.env
+ExecStart=%h/repos/mathist/plex-tvstation/.venv/bin/python %h/repos/mathist/plex-tvstation/src/comfort_web.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
