@@ -1,0 +1,893 @@
+{
+	"tvShowLimit": 8,
+	"defaultRewatchDelay": {
+		"movies": "180 days",
+		"tv": "90 days"
+	},
+	"excludedSlugs": [
+		"american-gods",
+		"stargate-sg-1",
+		"warehouse-13",
+		"silent-running",
+		"battlestar-galactica-2003",
+		"the-l-word",
+		"the-l-word-generation-q",
+		"bruce-almighty"
+	],
+	"franchises": [
+		"star-wars",
+		"star-trek",
+		"lord-of-the-rings",
+		"harry-potter",
+		"marvel",
+		"dc"
+	],
+	"restrictedPlayMonths": {
+		"december": [
+			"christmas",
+			"new-year"
+		]
+	},
+	"comfortShows": [
+		"bobs-burgers",
+		"community",
+		"ghosts",
+		"schitts-creek",
+		"star-trek-deep-space-nine",
+		"star-trek-lower-decks",
+		"star-trek-the-next-generation",
+		"the-good-place",
+		"the-mandalorian",
+		"the-orville",
+		"what-we-do-in-the-shadows",
+		"archer-2009",
+		"arrested-development",
+		"avenue-5",
+		"better-off-ted",
+		"broad-city",
+		"brooklyn-nine-nine",
+		"buffy-the-vampire-slayer",
+		"fresh-off-the-boat-1",
+		"ghosts-us",
+		"malcolm-in-the-middle",
+		"lost-girl",
+		"parks-and-recreation",
+		"the-righteous-gemstones",
+		"rick-and-morty",
+		"resident-alien",
+		"star-wars-rebels",
+		"star-trek-voyager",
+		"superstore",
+		"dirk-gentlys-holistic-detective-agency",
+		"orphan-black",
+		"speechless",
+		"stargate-sg-1",
+		"star-trek-picard",
+		"the-tick-1994",
+		"the-umbrella-academy",
+		"cobra-kai",
+		"defiance",
+		"farscape",
+		"kims-convenience",
+		"warehouse-13"
+	],
+	"metadata": [
+		{
+			"title": "Agatha All Along",
+			"year": "2024",
+			"franchise": "Marvel",
+			"slug": "agatha-all-along"
+		},
+		{
+			"title": "Ahsoka",
+			"year": "2023",
+			"franchise": "Star Wars",
+			"slug": "ahsoka"
+		},
+		{
+			"title": "Andor",
+			"year": "2022",
+			"franchise": "Star Wars",
+			"slug": "andor"
+		},
+		{
+			"title": "Ant-Man",
+			"year": "2015",
+			"franchise": "Marvel",
+			"slug": "ant-man"
+		},
+		{
+			"title": "Ant-Man and the Wasp",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "ant-man-and-the-wasp"
+		},
+		{
+			"title": "Ant-Man and The Wasp: Quantumania",
+			"year": "2023",
+			"franchise": "Marvel",
+			"slug": "ant-man-and-the-wasp-quantumania"
+		},
+		{
+			"title": "Avengers: Age of Ultron",
+			"year": "2015",
+			"franchise": "Marvel",
+			"slug": "avengers-age-of-ultron"
+		},
+		{
+			"title": "Avengers: Endgame",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "avengers-endgame"
+		},
+		{
+			"title": "Avengers: Infinity War",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "avengers-infinity-war"
+		},
+		{
+			"slug": "batman-begins",
+			"franchise": "DC",
+			"title": "Batman Begins",
+			"year": "2005"
+		},
+		{
+			"title": "Black Panther",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "black-panther"
+		},
+		{
+			"title": "Black Panther: Wakanda Forever",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "black-panther-wakanda-forever"
+		},
+		{
+			"title": "Black Widow",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "black-widow"
+		},
+		{
+			"slug": "blade",
+			"franchise": "Marvel",
+			"title": "Blade",
+			"year": "1998"
+		},
+		{
+			"title": "Bob's Burgers",
+			"rewatchDelay": "30 days",
+			"alwaysInclude": true,
+			"slug": "bobs-burgers",
+			"year": "2011-"
+		},
+		{
+			"title": "Captain America: Brave New World",
+			"year": "2025",
+			"franchise": "Marvel",
+			"slug": "captain-america-brave-new-world"
+		},
+		{
+			"title": "Captain America: Civil War",
+			"year": "2016",
+			"franchise": "Marvel",
+			"slug": "captain-america-civil-war"
+		},
+		{
+			"title": "Captain America: The First Avenger",
+			"year": "2011",
+			"franchise": "Marvel",
+			"slug": "captain-america-the-first-avenger"
+		},
+		{
+			"title": "Captain America: The Winter Soldier",
+			"year": "2014",
+			"franchise": "Marvel",
+			"slug": "captain-america-the-winter-soldier"
+		},
+		{
+			"title": "Captain Marvel",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "captain-marvel"
+		},
+		{
+			"title": "Cloak",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "cloak"
+		},
+		{
+			"title": "Community",
+			"slug": "community",
+			"year": "2009-2015"
+		},
+		{
+			"title": "Daredevil",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "daredevil"
+		},
+		{
+			"title": "Daredevil: Born Again",
+			"year": "2025",
+			"franchise": "Marvel",
+			"slug": "daredevil-born-again"
+		},
+		{
+			"title": "Deadpool & Wolverine",
+			"year": "2024",
+			"franchise": "Marvel",
+			"slug": "deadpool--wolverine"
+		},
+		{
+			"title": "Doctor Strange",
+			"year": "2016",
+			"franchise": "Marvel",
+			"slug": "doctor-strange"
+		},
+		{
+			"title": "Doctor Strange in the Multiverse of Madness",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "doctor-strange-in-the-multiverse-of-madness"
+		},
+		{
+			"title": "Echo",
+			"year": "2024",
+			"franchise": "Marvel",
+			"slug": "echo"
+		},
+		{
+			"title": "Eternals",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "eternals"
+		},
+		{
+			"slug": "fantastic-beasts-and-where-to-find-them",
+			"franchise": "Harry Potter",
+			"title": "Fantastic Beasts and Where to Find Them",
+			"year": "2016"
+		},
+		{
+			"slug": "fantastic-beasts-the-crimes-of-grindelwald",
+			"franchise": "Harry Potter",
+			"title": "Fantastic Beasts: The Crimes of Grindelwald",
+			"year": "2018"
+		},
+		{
+			"slug": "fantastic-beasts-the-secrets-of-dumbledore",
+			"franchise": "Harry Potter",
+			"title": "Fantastic Beasts: The Secrets of Dumbledore",
+			"year": "2022"
+		},
+		{
+			"title": "Guardians of the Galaxy",
+			"year": "2014",
+			"franchise": "Marvel",
+			"slug": "guardians-of-the-galaxy"
+		},
+		{
+			"title": "Guardians of the Galaxy Vol 2",
+			"year": "2017",
+			"franchise": "Marvel",
+			"slug": "guardians-of-the-galaxy-vol-2"
+		},
+		{
+			"title": "Guardians of the Galaxy Vol 3",
+			"year": "2023",
+			"franchise": "Marvel",
+			"slug": "guardians-of-the-galaxy-vol-3"
+		},
+		{
+			"title": "Hawkeye",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "hawkeye"
+		},
+		{
+			"title": "Helstrom",
+			"year": "2020",
+			"franchise": "Marvel",
+			"slug": "helstrom"
+		},
+		{
+			"title": "Inhumans",
+			"year": "2017",
+			"franchise": "Marvel",
+			"slug": "inhumans"
+		},
+		{
+			"title": "Iron Fist",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "iron-fist"
+		},
+		{
+			"title": "Iron Man",
+			"year": "2008",
+			"franchise": "Marvel",
+			"slug": "iron-man"
+		},
+		{
+			"title": "Iron Man 2",
+			"year": "2010",
+			"franchise": "Marvel",
+			"slug": "iron-man-2"
+		},
+		{
+			"title": "Iron Man 3",
+			"year": "2013",
+			"franchise": "Marvel",
+			"slug": "iron-man-3"
+		},
+		{
+			"title": "It's Always Sunny in Philadelphia",
+			"slug": "its-always-sunny-in-philadelphia",
+			"rewatchDelay": "30 days",
+			"alwaysInclude": false
+		},
+		{
+			"title": "Jessica Jones",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "jessica-jones"
+		},
+		{
+			"title": "Loki",
+			"year": "2023",
+			"franchise": "Marvel",
+			"slug": "loki"
+		},
+		{
+			"title": "Luke Cage",
+			"year": "2018",
+			"franchise": "Marvel",
+			"slug": "luke-cage"
+		},
+		{
+			"title": "Moon Knight",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "moon-knight"
+		},
+		{
+			"title": "Ms Marvel",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "ms-marvel"
+		},
+		{
+			"title": "Obi-Wan Kenobi",
+			"year": "2022",
+			"franchise": "Star Wars",
+			"slug": "obi-wan-kenobi"
+		},
+		{
+			"title": "Peacemaker",
+			"slug": "peacemaker-1",
+			"franchise": "DC"
+		},
+		{
+			"title": "Rogue One: A Star Wars Story",
+			"year": "2016",
+			"franchise": "Star Wars",
+			"slug": "rogue-one-a-star-wars-story"
+		},
+		{
+			"title": "Runaways",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "runaways"
+		},
+		{
+			"title": "Schitt's Creek",
+			"year": "2015-2020",
+			"slug": "schitts-creek",
+			"alwaysInclude": true
+		},
+		{
+			"title": "Secret Invasion",
+			"year": "2023",
+			"franchise": "Marvel",
+			"slug": "secret-invasion"
+		},
+		{
+			"title": "Shang-Chi and the Legend of the Ten Rings",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "shang-chi-and-the-legend-of-the-ten-rings"
+		},
+		{
+			"title": "She-Hulk: Attorney at Law",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "she-hulk-attorney-at-law"
+		},
+		{
+			"title": "Skeleton Crew",
+			"year": "2024",
+			"franchise": "Star Wars",
+			"slug": "skeleton-crew"
+		},
+		{
+			"title": "Solo: A Star Wars Story",
+			"year": "2018",
+			"franchise": "Star Wars",
+			"slug": "solo-a-star-wars-story"
+		},
+		{
+			"slug": "spider-man",
+			"franchise": "Marvel",
+			"title": "Spider-Man",
+			"year": "2002"
+		},
+		{
+			"slug": "spider-man-2",
+			"franchise": "Marvel",
+			"title": "Spider-Man 2",
+			"year": "2004"
+		},
+		{
+			"title": "Spider-Man: Far From Home",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "spider-man-far-from-home"
+		},
+		{
+			"title": "Spider-Man: Homecoming",
+			"year": "2017",
+			"franchise": "Marvel",
+			"slug": "spider-man-homecoming"
+		},
+		{
+			"title": "Spider-Man: No Way Home",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "spider-man-no-way-home"
+		},
+		{
+			"title": "Star Trek: Lower Decks",
+			"year": "2020-2024",
+			"franchise": "Star Trek",
+			"slug": "star-trek-lower-decks",
+			"alwaysInclude": true
+		},
+		{
+			"title": "Star Trek: The Next Generation",
+			"year": "1987-1994",
+			"franchise": "Star Trek",
+			"slug": "star-trek-the-next-generation",
+			"alwaysInclude": true
+		},
+		{
+			"title": "Star Wars Rebels",
+			"year": "2014",
+			"franchise": "Star Wars",
+			"slug": "star-wars-rebels"
+		},
+		{
+			"title": "Star Wars Resistance",
+			"year": "2018",
+			"franchise": "Star Wars",
+			"slug": "star-wars-resistance"
+		},
+		{
+			"title": "Star Wars: A New Hope (Episode IV)",
+			"year": "1977",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: Attack of the Clones (Episode II)",
+			"year": "2002",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: Return of the Jedi (Episode VI)",
+			"year": "1983",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: Revenge of the Sith (Episode III)",
+			"year": "2005",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: Tales of the Empire",
+			"year": "2024",
+			"franchise": "Star Wars",
+			"slug": "star-wars-tales-of-the-empire"
+		},
+		{
+			"title": "Star Wars: Tales of the Jedi",
+			"year": "2022",
+			"franchise": "Star Wars",
+			"slug": "star-wars-tales-of-the-jedi"
+		},
+		{
+			"title": "Star Wars: Tales of the Underworld",
+			"year": "2025",
+			"franchise": "Star Wars",
+			"slug": "star-wars-tales-of-the-underworld"
+		},
+		{
+			"title": "Star Wars: The Bad Batch",
+			"year": "2021",
+			"franchise": "Star Wars",
+			"slug": "star-wars-the-bad-batch"
+		},
+		{
+			"title": "Star Wars: The Clone Wars (movie)",
+			"year": "2008",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Clone Wars (series)",
+			"year": "2008",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Empire Strikes Back (Episode V)",
+			"year": "1980",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Force Awakens (Episode VII)",
+			"year": "2015",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Last Jedi (Episode VIII)",
+			"year": "2017",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Phantom Menace (Episode I)",
+			"year": "1999",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "Star Wars: The Rise of Skywalker (Episode IX)",
+			"year": "2019",
+			"franchise": "Star Wars"
+		},
+		{
+			"title": "The Acolyte",
+			"year": "2024",
+			"franchise": "Star Wars",
+			"slug": "the-acolyte"
+		},
+		{
+			"title": "The Avengers",
+			"year": "2012",
+			"franchise": "Marvel",
+			"slug": "the-avengers"
+		},
+		{
+			"title": "The Book of Boba Fett",
+			"year": "2021",
+			"franchise": "Star Wars",
+			"slug": "the-book-of-boba-fett"
+		},
+		{
+			"slug": "the-dark-knight",
+			"franchise": "DC",
+			"title": "The Dark Knight",
+			"year": "2008"
+		},
+		{
+			"title": "The Defenders",
+			"year": "2017",
+			"franchise": "Marvel",
+			"slug": "the-defenders"
+		},
+		{
+			"title": "The Falcon and the Winter Soldier",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "the-falcon-and-the-winter-soldier"
+		},
+		{
+			"title": "The Good Place",
+			"year": "2016-2020",
+			"slug": "the-good-place",
+			"alwaysInclude": true
+		},
+		{
+			"title": "The Guardians of the Galaxy Holiday Special",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "the-guardians-of-the-galaxy-holiday-special"
+		},
+		{
+			"title": "The Incredible Hulk",
+			"year": "2008",
+			"franchise": "Marvel",
+			"slug": "the-incredible-hulk"
+		},
+		{
+			"slug": "the-fellowship-of-the-ring",
+			"franchise": "Lord of the Rings",
+			"title": "The Lord of the Rings: The Fellowship of the Ring",
+			"year": "2001"
+		},
+		{
+			"title": "The Mandalorian",
+			"year": "2019",
+			"franchise": "Star Wars",
+			"slug": "the-mandalorian"
+		},
+		{
+			"title": "The Marvels",
+			"year": "2023",
+			"franchise": "Marvel",
+			"slug": "the-marvels"
+		},
+		{
+			"title": "The Punisher",
+			"year": "2019",
+			"franchise": "Marvel",
+			"slug": "the-punisher"
+		},
+		{
+			"title": "Thor",
+			"year": "2011",
+			"franchise": "Marvel",
+			"slug": "thor"
+		},
+		{
+			"title": "Thor: Love and Thunder",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "thor-love-and-thunder"
+		},
+		{
+			"title": "Thor: Ragnarok",
+			"year": "2017",
+			"franchise": "Marvel",
+			"slug": "thor-ragnarok"
+		},
+		{
+			"title": "Thor: The Dark World",
+			"year": "2013",
+			"franchise": "Marvel",
+			"slug": "thor-the-dark-world"
+		},
+		{
+			"title": "Thunderbolts*",
+			"year": "2025",
+			"franchise": "Marvel",
+			"slug": "thunderbolts"
+		},
+		{
+			"title": "WandaVision",
+			"year": "2021",
+			"franchise": "Marvel",
+			"slug": "wandavision"
+		},
+		{
+			"title": "Werewolf By Night",
+			"year": "2022",
+			"franchise": "Marvel",
+			"slug": "werewolf-by-night"
+		},
+		{
+			"title": "What If...?",
+			"year": "2024",
+			"franchise": "Marvel",
+			"slug": "what-if"
+		},
+		{
+			"slug": "x-men-origins-wolverine",
+			"franchise": "Marvel",
+			"title": "X-Men Origins: Wolverine",
+			"year": "2009"
+		},
+		{
+			"slug": "x2-x-men-united",
+			"franchise": "Marvel",
+			"title": "X2: X-Men United",
+			"year": "2003"
+		}
+	],
+	"comfortMovies": [
+		"dungeons-and-dragons-honor-among-thieves",
+		"solo-a-star-wars-story",
+		"star-wars-episode-i-the-phantom-menace",
+		"star-wars-episode-ii-attack-of-the-clones",
+		"star-wars-episode-iii-revenge-of-the-sith",
+		"star-wars-episode-iv-a-new-hope",
+		"star-wars-episode-v-the-empire-strikes-back",
+		"star-wars-episode-vi-return-of-the-jedi",
+		"the-addams-family-1991",
+		"addams-family-values",
+		"galaxy-quest",
+		"the-hitchhikers-guide-to-the-galaxy",
+		"superman-2025",
+		"venom-2018",
+		"venom-let-there-be-carnage",
+		"venom-the-last-dance",
+		"thor-love-and-thunder",
+		"thor-ragnarok",
+		"stardust",
+		"the-princess-bride",
+		"paddington-2",
+		"night-at-the-museum-battle-of-the-smithsonian",
+		"national-treasure-book-of-secrets",
+		"mickey-17",
+		"men-in-black",
+		"kung-fu-panda",
+		"the-karate-kid-2010",
+		"karate-kid-legends",
+		"the-incredibles",
+		"hackers",
+		"gun-shy",
+		"the-whole-nine-yards",
+		"gremlins",
+		"gremlins-2-the-new-batch",
+		"the-goonies",
+		"game-night",
+		"free-guy",
+		"the-fifth-element",
+		"encanto-2021",
+		"the-emperors-new-groove",
+		"elio-2025",
+		"enders-game",
+		"edge-of-tomorrow",
+		"starship-troopers",
+		"doctor-strange-2016",
+		"doctor-strange-in-the-multiverse-of-madness",
+		"spider-man",
+		"spider-man-2",
+		"spider-man-3",
+		"spider-man-across-the-spider-verse",
+		"spider-man-far-from-home",
+		"spider-man-homecoming",
+		"spider-man-into-the-spider-verse",
+		"spider-man-no-way-home",
+		"the-amazing-spider-man",
+		"the-amazing-spider-man-2",
+		"date-night",
+		"clue-1985",
+		"charlies-angels-2019",
+		"captain-marvel",
+		"the-bobs-burgers-movie",
+		"black-widow-2021",
+		"the-beekeeper-2024",
+		"batteries-not-included",
+		"the-accountant-2016",
+		"alita-battle-angel",
+		"alice-in-wonderland-2010-1",
+		"the-amateur-2025",
+		"ant-man-and-the-wasp-quantumania",
+		"ant-man-and-the-wasp",
+		"ant-man",
+		"back-to-the-future-part-ii",
+		"back-to-the-future",
+		"the-avengers",
+		"avengers-age-of-ultron",
+		"avengers-endgame",
+		"avengers-infinity-war",
+		"back-to-the-future-part-iii",
+		"barbie-2023-4",
+		"black-panther-wakanda-forever",
+		"captain-america-the-winter-soldier",
+		"captain-america-civil-war",
+		"bullet-train-2022",
+		"champions-2023",
+		"chappie",
+		"close-encounters-of-the-third-kind",
+		"christopher-robin",
+		"deadpool",
+		"deadpool-and-wolverine",
+		"deadpool-2",
+		"drive-away-dolls",
+		"evolution",
+		"eurotrip",
+		"the-fantastic-four-first-steps",
+		"guardians-of-the-galaxy",
+		"guardians-of-the-galaxy-vol-3",
+		"guardians-of-the-galaxy-vol-2",
+		"iron-man",
+		"iron-man-2",
+		"iron-man-3",
+		"johnny-english",
+		"jumanji-the-next-level",
+		"jumanji-welcome-to-the-jungle",
+		"knives-out-2019",
+		"the-last-starfighter",
+		"kung-fu-panda-3",
+		"kung-fu-panda-2",
+		"the-lego-movie",
+		"the-lovebirds-2020",
+		"moonfall",
+		"the-neverending-story",
+		"nobody-2021",
+		"no-hard-feelings-2023",
+		"night-at-the-museum-secret-of-the-tomb",
+		"pacific-rim",
+		"paddington-in-peru-2024",
+		"pirates-of-the-caribbean-dead-mans-chest",
+		"pirates-of-the-caribbean-at-worlds-end",
+		"pitch-perfect",
+		"pitch-perfect-2",
+		"pitch-perfect-3",
+		"pixels-2015",
+		"predator-badlands",
+		"please-stand-by-2018",
+		"r-i-p-d",
+		"shang-chi-and-the-legend-of-the-ten-rings",
+		"a-simple-favor",
+		"sneakers",
+		"speed-racer",
+		"spaceballs",
+		"star-trek-ii-the-wrath-of-khan",
+		"star-trek-iii-the-search-for-spock",
+		"star-trek-into-darkness",
+		"star-trek-iv-the-voyage-home",
+		"star-trek-section-31",
+		"star-trek-nemesis",
+		"star-trek-insurrection",
+		"star-trek-generations",
+		"star-trek-first-contact",
+		"star-trek-vi-the-undiscovered-country",
+		"star-trek-v-the-final-frontier",
+		"star-trek-the-motion-picture",
+		"starcrash",
+		"sunshine",
+		"supergirl-2026",
+		"tag-2018",
+		"teenage-mutant-ninja-turtles-out-of-the-shadows",
+		"teenage-mutant-ninja-turtles",
+		"ted",
+		"thunderbolts-2025",
+		"thor-the-dark-world",
+		"total-recall-1990",
+		"transformers-one-2024-1",
+		"tropic-thunder",
+		"the-worlds-end",
+		"joy-ride-2023",
+		"a-knights-tale",
+		"labyrinth-1986",
+		"the-marvels",
+		"muppet-treasure-island",
+		"oblivion",
+		"ralph-breaks-the-internet",
+		"ratatouille",
+		"thor",
+		"wreck-it-ralph",
+		"wild-wild-west",
+		"the-a-team",
+		"anaconda-2025",
+		"arcadian",
+		"batman-begins",
+		"the-batman",
+		"the-dark-knight",
+		"the-dark-knight-rises",
+		"cowboys-and-aliens",
+		"the-cabin-in-the-woods",
+		"bottoms-2023",
+		"destroy-all-neighbors",
+		"the-final-girls",
+		"fist-fight-2017",
+		"flow-2024-1",
+		"hellboy-2019",
+		"highlander-1986",
+		"maleficent",
+		"mid90s",
+		"a-minecraft-movie",
+		"monsters-inc",
+		"sorry-to-bother-you",
+		"underwater-2020",
+		"voyagers-2021",
+		"virtuosity-1995",
+		"vanilla-sky",
+		"wanted-2008",
+		"the-waterboy",
+		"wedding-crashers",
+		"what-we-do-in-the-shadows"
+	]
+}
